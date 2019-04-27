@@ -1,9 +1,9 @@
 class GoTask < Formula
   desc "Task runner / simpler Make alternative written in Go"
   homepage "https://taskfile.dev"
-  url "https://github.com/go-task/task/releases/download/v2.5.0/task_darwin_amd64.tar.gz"
-  version "2.5.0"
-  sha256 "4b06521cc1c41f766af1006664fac1cc870e5c48a4a64fa2f3727e3a343e8456"
+  url "https://github.com/go-task/task/releases/download/v2.5.1/task_darwin_amd64.tar.gz"
+  version "2.5.1"
+  sha256 "f78ca4880f38da66396f3239fbae8a3aa256f13e2526ff89f19daea985c50670"
 
   def install
     bin.install "task"
