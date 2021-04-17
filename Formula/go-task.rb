@@ -1,14 +1,14 @@
 class GoTask < Formula
   desc "Task runner / simpler Make alternative written in Go"
   homepage "https://taskfile.dev"
-  version "3.3.0"
+  version "3.4.1"
 
   if OS.mac?
     url "https://github.com/go-task/task/releases/download/v#{version}/task_darwin_amd64.tar.gz"
-    sha256 "0e18ae0b4e7b5a9e510cc860f99748e178aa621619e28600d6e597b240a8ffe6"
+    sha256 "ca0a78338663b1529fb1035ef386e639754c5011e0de0ceab69bc510e5435421"
   elsif OS.linux?
     url "https://github.com/go-task/task/releases/download/v#{version}/task_linux_amd64.tar.gz"
-    sha256 "41fde22b414806ca26fbd023dce7a296ee03e2c393f6f9516dc13b5f2f4254c1"
+    sha256 "01f607d0b1ca4712e868c8ae2b91d493ee93be4974b3cb9838382039df28a166"
   end
 
   def install
