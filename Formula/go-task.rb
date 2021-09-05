@@ -12,26 +12,26 @@ class GoTask < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/go-task/task/releases/download/v3.7.3/task_darwin_amd64.tar.gz"
-      sha256 "2bf91b97c81a3bc4ab088c5081d1c1adfcf68c3069739c2cc963cf8b81c5df9d"
+      sha256 "2cb230af13747d9c0dfa9cf2efa804770f581507fc49c0e92d2a5b82ce46a101"
     end
     if Hardware::CPU.arm?
       url "https://github.com/go-task/task/releases/download/v3.7.3/task_darwin_arm64.tar.gz"
-      sha256 "8d96c0189e1353e726c39b8814fada58d3de5cdfe35b06581a4f9e9ca76ee82e"
+      sha256 "ac66ca325e86da09092a58dc8d6f69adb9efe12ce9724f60d93c0d62675778b2"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/go-task/task/releases/download/v3.7.3/task_linux_amd64.tar.gz"
-      sha256 "d18b676c34e61f27f1b8914a60295c76ee8be9986b662c8ef685a9b8037e6141"
+      sha256 "23e670ab136e25dad74b3c7d97900f7c2879c6874ccaae29e6fc041061be5fb4"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
       url "https://github.com/go-task/task/releases/download/v3.7.3/task_linux_arm.tar.gz"
-      sha256 "3b624e447ae1bba12962831c052e24d3c4d950fd0dc8252110ccdb63dbd3f4e7"
+      sha256 "2dc4f55cbb87f21f86182c6904b7a55439baa636922b0266757d5da22149819b"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/go-task/task/releases/download/v3.7.3/task_linux_arm64.tar.gz"
-      sha256 "333e3761f843d2997dc1611edd8b1841fa93247cc11079e57d3f070bdcd30351"
+      sha256 "1293450f2c99c6c79a9a86fb4a8538bd5c14783b47e731f8259932e2e727144b"
     end
   end
 
