@@ -20,9 +20,9 @@ class GoTask < Formula
       fish: "completion/fish/task.fish",
     }
 
-    bash_completion.install completions["bash"] => "task" if File.exist?(completions["bash"])
-    zsh_completion.install completions["zsh"] => "_task" if File.exist?(completions["zsh"])
-    fish_completion.install completions["fish"] => "task.fish" if File.exist?(completions["fish"])
+    bash_completion.install completions[:bash] => "task" # if File.exist?(completions["bash"])
+    zsh_completion.install completions[:zsh] => "_task" # if File.exist?(completions["zsh"])
+    fish_completion.install completions[:fish] => "task.fish" # if File.exist?(completions["fish"])
   end
 
   test do
