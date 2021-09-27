@@ -5,32 +5,32 @@
 class GoTask < Formula
   desc "Task runner / simpler Make alternative written in Go"
   homepage "https://taskfile.dev"
-  version "v3.7.3"
+  version "v3.8.0"
   license "MIT"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/go-task/task/releases/download/v3.7.3/task_darwin_amd64.tar.gz"
+      url "https://github.com/go-task/task/releases/download/v3.8.0/task_darwin_amd64.tar.gz"
       sha256 "db554d151af42eef0609904526c9cf36e2800571d1763f389f4bbf654c7f3535"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/go-task/task/releases/download/v3.7.3/task_darwin_arm64.tar.gz"
+      url "https://github.com/go-task/task/releases/download/v3.8.0/task_darwin_arm64.tar.gz"
       sha256 "03129bcbd62aa59409e9147e4c7c3d7aa9b1a1b7946d43581fd99835c781411f"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/go-task/task/releases/download/v3.7.3/task_linux_amd64.tar.gz"
+      url "https://github.com/go-task/task/releases/download/v3.8.0/task_linux_amd64.tar.gz"
       sha256 "4d59ec362a04d39ae6f1d1a2419071cc1d6230e6bf779e06567927a73d79e475"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/go-task/task/releases/download/v3.7.3/task_linux_arm.tar.gz"
+      url "https://github.com/go-task/task/releases/download/v3.8.0/task_linux_arm.tar.gz"
       sha256 "6fb247ca632544a20c7c4600f0cdbb9ba388e0c154d053c27721df4d28f5e7c0"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/go-task/task/releases/download/v3.7.3/task_linux_arm64.tar.gz"
+      url "https://github.com/go-task/task/releases/download/v3.8.0/task_linux_arm64.tar.gz"
       sha256 "e2c78ce20d8021c4fd86656694a5f0d5248c8dd9b9b5f28628562c88e5acd351"
     end
   end
