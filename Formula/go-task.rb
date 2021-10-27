@@ -7,7 +7,6 @@ class GoTask < Formula
   homepage "https://taskfile.dev"
   version "v3.9.0"
   license "MIT"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
