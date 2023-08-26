@@ -5,13 +5,13 @@
 class GoTask < Formula
   desc "Task runner / simpler Make alternative written in Go"
   homepage "https://taskfile.dev"
-  version "3.28.0"
+  version "3.29.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/go-task/task/releases/download/v3.28.0/task_darwin_amd64.tar.gz"
-      sha256 "068f4d35b47419047afea167cbdff7d446ea4218548dfb3b541ca8b9a378fe84"
+      url "https://github.com/go-task/task/releases/download/v3.29.0/task_darwin_amd64.tar.gz"
+      sha256 "f86a77088bde689b0c0c193b5a1e6e0d94aef2d803ec33cf3427b4f6c757b201"
 
       def install
         bin.install "task"
@@ -21,8 +21,8 @@ class GoTask < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/go-task/task/releases/download/v3.28.0/task_darwin_arm64.tar.gz"
-      sha256 "e962a63a46251952a34c1bd0a060f2eb91009058de13ea4f7750c8ae00513f95"
+      url "https://github.com/go-task/task/releases/download/v3.29.0/task_darwin_arm64.tar.gz"
+      sha256 "8c7d7a621b2576d5c2d33c94537ef9eeeaa97530c00b43026b8c7e78442f6cd7"
 
       def install
         bin.install "task"
@@ -35,19 +35,8 @@ class GoTask < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/go-task/task/releases/download/v3.28.0/task_linux_amd64.tar.gz"
-      sha256 "a6d127f91c3a78512d8a20b4aca7b48b0b420c057fc09391ee1ae311293a565e"
-
-      def install
-        bin.install "task"
-        bash_completion.install "completion/bash/task.bash" => "task"
-        zsh_completion.install "completion/zsh/_task" => "_task"
-        fish_completion.install "completion/fish/task.fish"
-      end
-    end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/go-task/task/releases/download/v3.28.0/task_linux_arm.tar.gz"
-      sha256 "1be7e3bfbe1ad29d807c6a85ef33ab0bdfbc8c7c5fe33d6e08043646e02db43a"
+      url "https://github.com/go-task/task/releases/download/v3.29.0/task_linux_amd64.tar.gz"
+      sha256 "f9789178896cfd4635a3e1e43828266e1b33ba284ce7df30b3049f45f28b7330"
 
       def install
         bin.install "task"
@@ -57,8 +46,19 @@ class GoTask < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/go-task/task/releases/download/v3.28.0/task_linux_arm64.tar.gz"
-      sha256 "031b26ca68a5274c0d88263bdd1b334c4f87c381f750c0e22e7777a1fb3374f7"
+      url "https://github.com/go-task/task/releases/download/v3.29.0/task_linux_arm64.tar.gz"
+      sha256 "62157212305adb12d52fa077a08060c8fe9e36a8d698beadf4b54562bc26b780"
+
+      def install
+        bin.install "task"
+        bash_completion.install "completion/bash/task.bash" => "task"
+        zsh_completion.install "completion/zsh/_task" => "_task"
+        fish_completion.install "completion/fish/task.fish"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/go-task/task/releases/download/v3.29.0/task_linux_arm.tar.gz"
+      sha256 "1fb8b0d2bd6bc21be7463bedb958ba1b07ed432c954df4f55015f8422bd402f9"
 
       def install
         bin.install "task"
