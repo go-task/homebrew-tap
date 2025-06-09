@@ -5,13 +5,13 @@
 class GoTask < Formula
   desc "Task runner / simpler Make alternative written in Go"
   homepage "https://taskfile.dev"
-  version "3.43.3"
+  version "3.44.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/go-task/task/releases/download/v3.43.3/task_darwin_amd64.tar.gz"
-      sha256 "4aab49ef373ca1b61b4cfb8011a73c1200f790cc7e783e36ef33052b90d47316"
+      url "https://github.com/go-task/task/releases/download/v3.44.0/task_darwin_amd64.tar.gz"
+      sha256 "7bb354c0ceb01d9256373749cc7155d33de7234587fbbab4d985ee77c0414274"
 
       def install
         bin.install "task"
@@ -21,8 +21,8 @@ class GoTask < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/go-task/task/releases/download/v3.43.3/task_darwin_arm64.tar.gz"
-      sha256 "39f692b91a95220aba5e9b7c8546475ac9dd133e92cefe97b741f917606deda0"
+      url "https://github.com/go-task/task/releases/download/v3.44.0/task_darwin_arm64.tar.gz"
+      sha256 "cfbfe894ae1987a378af50230c9b60ec62a072093e96d217c1e5dd9f4b108fbe"
 
       def install
         bin.install "task"
@@ -34,43 +34,34 @@ class GoTask < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/go-task/task/releases/download/v3.43.3/task_linux_amd64.tar.gz"
-        sha256 "9f93a694464addaf5205661fc43fc9b9fa2b31596731e91510b41811da79fe21"
-
-        def install
-          bin.install "task"
-          bash_completion.install "completion/bash/task.bash" => "task"
-          zsh_completion.install "completion/zsh/_task" => "_task"
-          fish_completion.install "completion/fish/task.fish"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/go-task/task/releases/download/v3.44.0/task_linux_amd64.tar.gz"
+      sha256 "d6c9c0a14793659766ee0c06f9843452942ae6982a3151c6bbd78959c1682b82"
+      def install
+        bin.install "task"
+        bash_completion.install "completion/bash/task.bash" => "task"
+        zsh_completion.install "completion/zsh/_task" => "_task"
+        fish_completion.install "completion/fish/task.fish"
       end
     end
-    if Hardware::CPU.arm?
-      if !Hardware::CPU.is_64_bit?
-        url "https://github.com/go-task/task/releases/download/v3.43.3/task_linux_arm.tar.gz"
-        sha256 "b391e0dad0c3dc72af080dfb0ff6ad5b65d6709d176cb2b451caa4f53da142a7"
-
-        def install
-          bin.install "task"
-          bash_completion.install "completion/bash/task.bash" => "task"
-          zsh_completion.install "completion/zsh/_task" => "_task"
-          fish_completion.install "completion/fish/task.fish"
-        end
+    if Hardware::CPU.arm? and !Hardware::CPU.is_64_bit?
+      url "https://github.com/go-task/task/releases/download/v3.44.0/task_linux_arm.tar.gz"
+      sha256 "659c3a55654c9438dbb399f33b955c834162ce99b43275df66e3b8f17559107c"
+      def install
+        bin.install "task"
+        bash_completion.install "completion/bash/task.bash" => "task"
+        zsh_completion.install "completion/zsh/_task" => "_task"
+        fish_completion.install "completion/fish/task.fish"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/go-task/task/releases/download/v3.43.3/task_linux_arm64.tar.gz"
-        sha256 "b52835656febfcbaaa4513b8aa7b7ff3b57361de482d6cec8c895710d8648625"
-
-        def install
-          bin.install "task"
-          bash_completion.install "completion/bash/task.bash" => "task"
-          zsh_completion.install "completion/zsh/_task" => "_task"
-          fish_completion.install "completion/fish/task.fish"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/go-task/task/releases/download/v3.44.0/task_linux_arm64.tar.gz"
+      sha256 "3b2a79a5372e3806c4b345bdfb4a1a1a93a287a58804986bb57b16665db5db22"
+      def install
+        bin.install "task"
+        bash_completion.install "completion/bash/task.bash" => "task"
+        zsh_completion.install "completion/zsh/_task" => "_task"
+        fish_completion.install "completion/fish/task.fish"
       end
     end
   end
