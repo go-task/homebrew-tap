@@ -11,7 +11,7 @@ class GoTask < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/go-task/task/releases/download/v3.45.3/task_darwin_amd64.tar.gz"
-      sha256 "a5e032084d478c4adcc8097862d3b6da3b8252e17594248f805bfdeba0ef9eaa"
+      sha256 "ec181efc611e17bca76687b43444e22724983bba25ad602c3cd068419e642da6"
 
       def install
         bin.install "task"
@@ -22,7 +22,7 @@ class GoTask < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/go-task/task/releases/download/v3.45.3/task_darwin_arm64.tar.gz"
-      sha256 "80fa5cdc1e695aca8c80cc956bac5ee7f9e3ca78aeb2c4a8ce0eea02496c8154"
+      sha256 "1c621045b7c6da164e25d0c458d17339d01386cbeec67e79a98ae9528bdfe044"
 
       def install
         bin.install "task"
@@ -36,7 +36,7 @@ class GoTask < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/go-task/task/releases/download/v3.45.3/task_linux_amd64.tar.gz"
-      sha256 "2baee3aaff244015782a68237d247917b4e7a98839c864e5b7b5f2b403c0fbd0"
+      sha256 "2c39d989ba8ab6ed37c025e9094e37240360fa2d69158504fc7a7486c88dc26f"
       def install
         bin.install "task"
         bash_completion.install "completion/bash/task.bash" => "task"
@@ -46,7 +46,7 @@ class GoTask < Formula
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
       url "https://github.com/go-task/task/releases/download/v3.45.3/task_linux_arm.tar.gz"
-      sha256 "6f1a7b6d7889d8a92a9966ecf6e49dc1a2467795bfed23b677156a3265dc25ae"
+      sha256 "5b875993c79160e7e5e12a6ad5ffa1614694082ec5e7ca78b0a7f1f7b4fa9ac9"
       def install
         bin.install "task"
         bash_completion.install "completion/bash/task.bash" => "task"
@@ -56,7 +56,7 @@ class GoTask < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/go-task/task/releases/download/v3.45.3/task_linux_arm64.tar.gz"
-      sha256 "b8b8a4685722d97cd3ee795cdbf65e2cd73b21d2746f48e353328e54aae9344f"
+      sha256 "cb5e6b62a4ae7acbe69c99ba344eb8e68e37f25905600e4694518fe75e412276"
       def install
         bin.install "task"
         bash_completion.install "completion/bash/task.bash" => "task"
