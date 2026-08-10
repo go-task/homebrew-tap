@@ -11,7 +11,7 @@ class GoTask < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/go-task/task/releases/download/v3.50.0/task_darwin_amd64.tar.gz"
-      sha256 "da3ba003ec049fb8be1ff798132c951dcd08a60efbdc2d1e918bf2095cd4a39c"
+      sha256 "c5df4a29eaf767f6a369362181556f8dde4caa17"
 
       define_method(:install) do
         bin.install "task"
