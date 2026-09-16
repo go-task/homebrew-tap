@@ -37,9 +37,11 @@ cask "go-task" do
   fish_completion "completion/fish/task.fish"
   zsh_completion "completion/zsh/_task"
 
-  postflight do
-    if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/task"]
+  postflight_steps do
+    on_macos do
+      run "/usr/bin/xattr",
+          args: ["-dr", "com.apple.quarantine", "{{staged_path}}/task"],
+          must_succeed: false
     end
   end
 
